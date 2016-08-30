@@ -1,0 +1,35 @@
+<h1>PRATOS - 2016</h1>
+
+<?php $this->mensagem(); ?>
+
+<p>[<a href="<?php echo $this->url(array('action' => 'create')); ?>">novo</a>]</p>
+
+
+<table border="3">
+  <thead>
+    <tr>
+      <td>COD. PRATRO</td>
+      <td>NOME DO PRATO</td>
+      <td>CATEGORIA</td>
+      <td>PREÇO</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach ($this->prato as $prato) { ?>
+        <tr>
+          <td><?php echo $prato['idprato']; ?></td>
+          
+          <td><?php echo $prato['pratonome']; ?></td>
+          
+          <td><?php echo $prato['categoria']; ?></td>
+          
+          <td><?php echo $prato['precodoprato']; ?></td>
+          <td>
+            [<a href="<?php echo $this->url(array('action' => 'update', 'idprato' => $prato['idprato'])); ?>">editar</a>
+            <?php  if($this->podeApagar){ ?>[<a href="<?php echo $this->url(array('action' => 'delete', 'idprato' => $prato['idprato'])); ?>">apagar</a>]<?php } ?>
+          </td>
+        </tr>
+      <?php } ?>
+  </tbody>
+</table>

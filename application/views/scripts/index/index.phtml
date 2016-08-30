@@ -1,0 +1,28 @@
+<?php header("location:login"); ?>
+<h1>CARDAPIO - 2016</h1>
+
+<table border="3">
+
+    
+  <thead>
+    <tr>
+      <td>NOME DO PRATO</td>
+      <td>CATEGORIA</td>
+      <td>PREÇOS</td>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach ($this->prato as $pratos) { 
+        
+          if($pratos['precodoprato'] > 0){
+        ?>
+        <tr>
+          <td><?php echo $pratos['pratonome']; ?></td>
+          
+          <td><?php echo $pratos['categoria']; ?></td>
+          
+          <td><?php echo $pratos['precodoprato']; ?></td>
+        </tr>
+      <?php } }?>
+  </tbody>
+</table>
